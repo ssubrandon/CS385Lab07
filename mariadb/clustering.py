@@ -79,7 +79,7 @@ def main():
         value = '{},{}'.format(res[0],get_ip_address())
         zk.set(CLUSTER_NODES, value.decode())
 
-        if !zk.exists(CLUSTER_NODES):#no node exists 
+        if not zk.exists(CLUSTER_NODES):#no node exists 
             bootstrap_cluster()
         else:#node already exists
             start_node(CLUSTER_NODES)
